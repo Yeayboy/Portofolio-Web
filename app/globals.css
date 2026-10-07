@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap");
+
+:root {
+  --black: #0a0a0a;
+  --yellow: #ffe135;
+  --red: #e63946;
+  --blue: #1e40af;
+  --dark: #0d1b2a;
+  --cream: #fff8e7;
+  --shadow: 4px 4px 0px 0px #0a0a0a;
+  --shadow-lg: 6px 6px 0px 0px #0a0a0a;
+  --shadow-xl: 8px 8px 0px 0px #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff8e7;
+  color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #ffe135; }
+::-webkit-scrollbar-thumb { background: #0a0a0a; border: 2px solid #ffe135; }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 6s ease-in-out 2s infinite; }
+
+/* Blink dot */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink { animation: blink 1.5s infinite; }
+
+/* Comic button base */
+.btn-comic {
+  @apply inline-flex items-center gap-2 px-6 py-3 font-bold text-sm border-4 border-black cursor-pointer uppercase tracking-wide transition-all duration-100;
+  box-shadow: var(--shadow);
+}
+.btn-comic:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+.btn-comic:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Comic card */
+.card-comic {
+  @apply border-4 border-black;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card-comic:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+}
