@@ -18,6 +18,7 @@ export const personalInfo = {
   githubUsername: "Yeayboy",
   cvPath: "/images/Farih_CV.pdf",
   photo: "/images/profile.jpeg",
+  photo1: "/images/Me.jpeg",
 };
 
 export const stats = [

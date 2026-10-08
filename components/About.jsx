@@ -41,7 +41,7 @@ export default function About() {
               style={{ transform: "rotate(-2deg)", boxShadow: "8px 8px 0 #0a0a0a" }}
             >
               <Image
-                src={personalInfo.photo}
+                src={personalInfo.photo1}
                 alt="Farih Ramdan Wildantama"
                 width={480}
                 height={400}
